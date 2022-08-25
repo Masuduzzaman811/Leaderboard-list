@@ -46,3 +46,14 @@ cd Leaderboard-list
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Masuduzzaman811/Leaderboard-list/issues).
+
+
+## Acknowledgments
+
+- Microverse
+
+## 📝 Licensed.
+
+- This project is [MIT](https://github.com/microverseinc/readme-template/blob/master/LICENSE) licensed
