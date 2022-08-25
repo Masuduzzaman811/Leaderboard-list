@@ -1,20 +1,20 @@
 const scoresArr = [
   {
     name: 'Masud',
-    score: 100
+    score: 100,
   },
   {
     name: 'Ruhul',
-    score: 160
+    score: 160,
   },
   {
     name: 'Bro',
-    score: 180
+    score: 180,
   },
   {
     name: 'Ayaat',
-    score: 140
-  }
-]
+    score: 140,
+  },
+];
 
 export default scoresArr;
