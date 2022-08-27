@@ -1,14 +1,18 @@
-import scoresArr from './scoresArr.js';
+import { fetchData } from './scoresArr.js';
 
-const displayScores = document.querySelector('.scores');
+const displayList = document.querySelector('.scores');
+
 const printScores = () => {
-  scoresArr.forEach((game, index) => {
-    let listItem = '';
-    listItem = `<li class="score-item" id="${index}">${game.name}: ${game.score}</li>`;
-    displayScores.innerHTML += listItem;
+  displayList.innerHTML = '';
+  fetchData().then((result) => {
+    const orderScores = result.result.sort((a, b) => b.score - a.score);
+    orderScores.forEach((score) => {
+      const li = document.createElement('li');
+      li.innerHTML = `<li class = "score-item"> ${score.user}: ${score.score}</li>`;
+      li.style.listStyle = 'none';
+      displayList.appendChild(li);
+    });
   });
-
-  return displayScores;
 };
 
 export default printScores;

@@ -1,20 +1,21 @@
-const scoresArr = [
-  {
-    name: 'Masud',
-    score: 100,
-  },
-  {
-    name: 'Ruhul',
-    score: 160,
-  },
-  {
-    name: 'Bro',
-    score: 180,
-  },
-  {
-    name: 'Ayaat',
-    score: 140,
-  },
-];
+const URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/A0HhCYjfm5a3zPPkLnsD/scores/';
 
-export default scoresArr;
+const fetchData = async () => {
+  const response = await fetch(URL);
+  const scores = await response.json();
+  return scores;
+};
+
+const showData = async (player, scores) => {
+  const answer = await fetch(URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ user: player, score: scores }),
+  });
+  const score = answer.json();
+  return score;
+};
+
+export { fetchData, showData };
